@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import java.awt.desktop.OpenFilesEvent;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
-public class AutomationPracticeForm {
+public class AutomationPracticeFormTest {
 
     @BeforeAll
     static void configuration () {
@@ -42,19 +42,29 @@ public class AutomationPracticeForm {
         $(".react-datepicker__year-select").selectOption("1992");
         $(".react-datepicker__day--008").click();
 
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
+
         $("#state").click();
         $(byText("NCR")).click();
+
         $("#city").click();
         $(byText("Delhi")).click();
-        //$("#submit").click();
 
+        $("#submit").click();
+
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive").shouldHave(text("Aleksandr Apoltsev"),
+                text("apoltsev@mail.ru"),
+                text("Male"),
+                text("9876543210"),
+                text("08 June,1992"),
+                text("English"),
+                text("Sports"),
+                text("Reading"),
+                text("1.jpg"),
+                text("City Street 123456"),
+                text("NCR Delhi"));
 
     }
-
-
-
-
-
-
-
 }
