@@ -4,8 +4,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.awt.desktop.OpenFilesEvent;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -17,7 +15,6 @@ public class AutomationPracticeFormTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = true;
-
     }
 
     @Test
@@ -30,7 +27,6 @@ public class AutomationPracticeFormTest {
         $("#userNumber").setValue("9876543210");
         $("#currentAddress").setValue("City Street 123456");
         $("#subjectsInput").setValue("English").pressEnter();
-
         $("#uploadPicture").uploadFromClasspath("1.jpg");
 
         $(byText("Male")).click();
@@ -47,7 +43,6 @@ public class AutomationPracticeFormTest {
 
         $("#state").click();
         $(byText("NCR")).click();
-
         $("#city").click();
         $(byText("Delhi")).click();
 
