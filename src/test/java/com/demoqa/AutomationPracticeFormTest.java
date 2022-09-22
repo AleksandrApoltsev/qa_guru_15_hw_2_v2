@@ -29,9 +29,9 @@ public class AutomationPracticeFormTest {
         $("#subjectsInput").setValue("English").pressEnter();
         $("#uploadPicture").uploadFromClasspath("1.jpg");
 
-        $(byText("Male")).click();
-        $(byText("Sports")).click();
-        $(byText("Reading")).click();
+        $("#genterWrapper").$(byText("Male")).click();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("June");
@@ -42,9 +42,9 @@ public class AutomationPracticeFormTest {
         executeJavaScript("$('#fixedban').remove()");
 
         $("#state").click();
-        $(byText("NCR")).click();
+        $("#stateCity-wrapper").$(byText("NCR")).click();
         $("#city").click();
-        $(byText("Delhi")).click();
+        $("#stateCity-wrapper").$(byText("Delhi")).click();
 
         $("#submit").click();
 
