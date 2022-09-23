@@ -24,19 +24,17 @@ public class AutomationPracticeFormTest {
         $("#firstName").setValue("Aleksandr");
         $("#lastName").setValue("Apoltsev");
         $("#userEmail").setValue("apoltsev@mail.ru");
-        $("#userNumber").setValue("9876543210");
-        $("#currentAddress").setValue("City Street 123456");
-        $("#subjectsInput").setValue("English").pressEnter();
-        $("#uploadPicture").uploadFromClasspath("1.jpg");
-
         $("#genterWrapper").$(byText("Male")).click();
-        $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#hobbiesWrapper").$(byText("Reading")).click();
-
+        $("#userNumber").setValue("9876543210");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("June");
         $(".react-datepicker__year-select").selectOption("1992");
         $(".react-datepicker__day--008").click();
+        $("#subjectsInput").setValue("English").pressEnter();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
+        $("#uploadPicture").uploadFromClasspath("1.jpg");
+        $("#currentAddress").setValue("City Street 123456");
 
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
